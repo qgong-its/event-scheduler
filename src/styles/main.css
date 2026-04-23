@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+/**
+ * Temporarily disabled due to compatibility issues: daisyUI + Tailwind v4 + Vite 8 + Node >=22
+ */
+/* @plugin "daisyui"; */
+
+/**
+ * TEMP workaround for DaisyUI plugin issue
+ * add into vite.config.js
+ * optimizeDeps: {
+ *   include: ['daisyui'],
+ * },
+ */
+@import 'daisyui/daisyui.css';
