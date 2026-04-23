@@ -4,6 +4,7 @@ export default function App() {
   return (
     <main>
       <h1>event-scheduler</h1>
+      <p>A paragraph</p>
     </main>
   );
 }
