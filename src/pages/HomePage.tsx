@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import type { Event } from '@/types/events';
 import { getEvents } from '@/services/eventApi';
 
+import EventCard from '@/components/ui/EventCard';
+
 const HomePage = () => {
   const [events, setEvents] = useState<Event[]>([]);
   const [error, setError] = useState('');
@@ -16,18 +18,16 @@ const HomePage = () => {
   }, []);
 
   return (
-    <main>
-      <h1>Events</h1>
+    <main className="mx-auto max-w-5xl px-4 py-8">
+      <h1 className="mb-6 text-3xl font-bold">Events</h1>
 
-      {error && <p>{error}</p>}
+      {error && <p className="alert alert-error">{error}</p>}
 
-      {events.map((event) => (
-        <article key={event.id}>
-          <h2>{event.title}</h2>
-          <p>{event.date}</p>
-          <p>{event.location}</p>
-        </article>
-      ))}
+      <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {events.map((event) => (
+          <EventCard key={event.id} event={event} />
+        ))}
+      </section>
     </main>
   );
 };
