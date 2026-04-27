@@ -4,6 +4,8 @@ import { useParams } from 'react-router';
 import { getEventById } from '@/services/eventApi';
 import type { Event } from '@/types/events';
 
+import ErrorMessage from '@/components/ui/ErrorMessage';
+
 const formatDate = (date: string) =>
   new Date(date).toLocaleDateString('de-DE', {
     day: '2-digit',
@@ -31,7 +33,7 @@ const EventDetailsPage = () => {
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return <ErrorMessage error={error} />;
   }
 
   if (!event) {
