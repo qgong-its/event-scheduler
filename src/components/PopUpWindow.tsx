@@ -1,7 +1,15 @@
-const PopUpWindow = ({ message }: { message: string }) => {
+type Props = {
+	messages: string[];
+};
+
+const PopUpWindow = ({ messages }: Props) => {
+	if (!messages.length) return null;
+
 	return (
-		<div className="pupUpWindow">
-			<p>{message}</p>
+		<div className="popup">
+			{messages.map((msg, index) => (
+				<p key={index}>{msg}</p>
+			))}
 		</div>
 	);
 };
