@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import { Link, NavLink, useNavigate } from 'react-router';
 
 import { getToken, removeToken } from '@/utils/tokenStorage';
@@ -35,7 +34,7 @@ const Navbar = () => {
             <NavLink to="/user" className="btn btn-ghost">
               User
             </NavLink>
-            <button className="btn" onClick={handleSignOut}>
+            <button type="button" onClick={handleSignOut} className="btn">
               Sign Out
             </button>
           </>
