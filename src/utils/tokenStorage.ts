@@ -2,6 +2,7 @@ const TOKEN_KEY = 'eventSchedulerUsrToken';
 
 export const saveToken = (token: string) => {
   localStorage.setItem(TOKEN_KEY, token);
+  window.dispatchEvent(new Event('auth-change'));
 };
 
 export const getToken = () => {
@@ -10,6 +11,7 @@ export const getToken = () => {
 
 export const removeToken = () => {
   localStorage.removeItem(TOKEN_KEY);
+  window.dispatchEvent(new Event('auth-change'));
 };
 
 export const hasToken = () => {
