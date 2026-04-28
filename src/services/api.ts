@@ -16,8 +16,8 @@ export const request = async <T>(
   const response = await fetch(`${API_BASE_URL}${endpoint}`, {
     ...restOptions,
     headers: {
-      'Content-Type': 'application/Json',
-      ...(token ? { Authofrization: `Bearer ${token}` } : {}),
+      'Content-Type': 'application/json',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...headers,
     },
   });
