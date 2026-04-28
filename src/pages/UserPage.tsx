@@ -42,7 +42,7 @@ const UserPage = () => {
 
   return (
     <main className="mx-auto max-w-xl px-4 py-8">
-      <section className="card bg-base-100 shadow-md">
+      <section className="card bg-base-100 w-full shadow-md">
         <div className="card-body">
           <div className="flex items-start justify-between gap-4">
             <div>

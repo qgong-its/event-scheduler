@@ -8,14 +8,16 @@ const SignInPage = () => {
   const navigate = useNavigate();
 
   return (
-    <AuthForm
-      submitLabel="Sign In"
-      onSubmit={async (email, password) => {
-        const data = await userLogin({ email, password });
-        saveToken(data.token);
-        navigate('/');
-      }}
-    />
+    <main className="min-h-screen flex items-center justify-center px-4 bg-base-200">
+      <AuthForm
+        submitLabel="Sign In"
+        onSubmit={async (email, password) => {
+          const data = await userLogin({ email, password });
+          saveToken(data.token);
+          navigate('/');
+        }}
+      />
+    </main>
   );
 };
 
