@@ -1,5 +1,7 @@
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
+import { getToken } from '@/utils/tokenStorage';
+
 type RequestOptions = RequestInit & {
   token?: string | null;
 };
@@ -9,7 +11,7 @@ export const request = async <T>(
   options: RequestOptions = {},
 ): Promise<T> => {
   // Object Destructuring & Rest Properties
-  const { token, headers, ...restOptions } = options;
+  const { token = getToken(), headers, ...restOptions } = options;
 
   const response = await fetch(`${API_BASE_URL}${endpoint}`, {
     ...restOptions,
