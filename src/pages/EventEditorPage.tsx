@@ -29,76 +29,78 @@ const EventEditorPage = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
-    >
-      <legend className="fieldset-legend">Create Event Form</legend>
-      <label className="fieldset">
-        <span className="label">Title</span>
-        <input
-          name="title"
-          type="text"
-          className="input validator"
-          placeholder="Title"
-          required
-        />
-        <span className="validator-hint hidden">Required</span>
-      </label>
-      <label className="fieldset">
-        <span className="label">Description</span>
-        <input
-          name="description"
-          type="text"
-          className="input validator"
-          placeholder="Description"
-        />
-      </label>
-      <label className="fieldset">
-        <span className="label">Date</span>
-        <input
-          name="date"
-          type="date"
-          className="input validator"
-          placeholder="Date"
-          required
-        />
-        <span className="validator-hint hidden">Required</span>
-      </label>
-      <label className="fieldset">
-        <span className="label">Location</span>
-        <input
-          name="location"
-          type="text"
-          className="input validator"
-          placeholder="Location"
-          required
-        />
-        <span className="validator-hint hidden">Required</span>
-      </label>
-      <label className="fieldset">
-        <span className="label">Latitude</span>
-        <input
-          name="latitude"
-          type="number"
-          className="input validator"
-          placeholder="Latitude"
-        />
-      </label>
-      <label className="fieldset">
-        <span className="label">Longitude</span>
-        <input
-          name="longitude"
-          type="number"
-          className="input validator"
-          placeholder="Longitude"
-        />
-      </label>
+    <main className="mx-auto flex max-w-xl justify-center px-4 py-8">
+      <form
+        onSubmit={handleSubmit}
+        className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-sm border p-6"
+      >
+        <legend className="fieldset-legend">Create Event Form</legend>
+        <label className="fieldset">
+          <span className="label">Title</span>
+          <input
+            name="title"
+            type="text"
+            className="input validator w-full"
+            placeholder="Title"
+            required
+          />
+          <span className="validator-hint hidden">Required</span>
+        </label>
+        <label className="fieldset">
+          <span className="label">Description</span>
+          <input
+            name="description"
+            type="text"
+            className="input validator w-full"
+            placeholder="Description"
+          />
+        </label>
+        <label className="fieldset">
+          <span className="label">Date</span>
+          <input
+            name="date"
+            type="date"
+            className="input validator w-full"
+            placeholder="Date"
+            required
+          />
+          <span className="validator-hint hidden">Required</span>
+        </label>
+        <label className="fieldset">
+          <span className="label">Location</span>
+          <input
+            name="location"
+            type="text"
+            className="input validator w-full"
+            placeholder="Location"
+            required
+          />
+          <span className="validator-hint hidden">Required</span>
+        </label>
+        <label className="fieldset">
+          <span className="label">Latitude</span>
+          <input
+            name="latitude"
+            type="number"
+            className="input validator w-full"
+            placeholder="Latitude"
+          />
+        </label>
+        <label className="fieldset">
+          <span className="label">Longitude</span>
+          <input
+            name="longitude"
+            type="number"
+            className="input validator w-full"
+            placeholder="Longitude"
+          />
+        </label>
 
-      <button type="submit" className="btn btn-neutral mt-4">
-        Create
-      </button>
-    </form>
+        <button type="submit" className="btn btn-neutral mt-4 w-full">
+          Create
+        </button>
+      </form>
+    </main>
   );
 };
 

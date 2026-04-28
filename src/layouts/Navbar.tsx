@@ -33,20 +33,16 @@ const Navbar = () => {
           Home
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        {token && (
-          <NavLink to="/editor" className="btn btn-ghost">
-            Event Editor
-          </NavLink>
-        )}
-      </div>
       <div className="navbar-end gap-2">
         {token ? (
           <>
+            <NavLink to="/editor" className="btn btn-ghost">
+              Event Editor
+            </NavLink>
             <NavLink to="/user" className="btn btn-ghost">
               User
             </NavLink>
-            <button type="button" onClick={handleSignOut} className="btn">
+            <button type="button" className="btn" onClick={handleSignOut}>
               Sign Out
             </button>
           </>
