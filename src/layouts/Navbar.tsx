@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router';
 
 import { getToken, removeToken } from '@/utils/tokenStorage';
@@ -7,6 +7,18 @@ const Navbar = () => {
   const [token, setToken] = useState(getToken());
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleAuthChange = () => {
+      setToken(getToken());
+    };
+
+    window.addEventListener('auth-change', handleAuthChange);
+
+    return () => {
+      window.removeEventListener('auth-change', handleAuthChange);
+    };
+  }, []);
 
   const handleSignOut: React.MouseEventHandler<HTMLButtonElement> = () => {
     removeToken();
