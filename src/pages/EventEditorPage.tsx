@@ -1,6 +1,11 @@
+import { useNavigate } from 'react-router';
+
 import { createEvent } from '@/services/eventApi';
 import type { CreateEventPayload } from '@/types/events';
+
 const EventEditorPage = () => {
+  const navigate = useNavigate();
+
   const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -18,7 +23,9 @@ const EventEditorPage = () => {
         : undefined,
     };
 
-    await createEvent(payload);
+    const newEvent = await createEvent(payload);
+
+    navigate(`/events/${newEvent.id}`);
   };
 
   return (
