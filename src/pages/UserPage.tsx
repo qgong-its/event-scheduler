@@ -2,15 +2,8 @@ import { useEffect, useState } from 'react';
 
 import type { User } from '@/types/user';
 import { getUserProfile } from '@/services/userApi';
-
 import ErrorMessage from '@/components/ui/ErrorMessage';
-
-const formatDate = (date: string) =>
-  new Date(date).toLocaleDateString('de-DE', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  });
+import { formatDate } from '@/utils/date';
 
 const UserPage = () => {
   const [user, setUser] = useState<User | null>(null);
