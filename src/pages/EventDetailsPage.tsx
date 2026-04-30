@@ -3,15 +3,8 @@ import { useParams } from 'react-router';
 
 import { getEventById } from '@/services/eventApi';
 import type { Event } from '@/types/events';
-
 import ErrorMessage from '@/components/ui/ErrorMessage';
-
-const formatDate = (date: string) =>
-  new Date(date).toLocaleDateString('de-DE', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  });
+import { formatDate } from '@/utils/date';
 
 const EventDetailsPage = () => {
   const { id } = useParams<{ id: string }>();

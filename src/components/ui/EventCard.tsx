@@ -1,17 +1,11 @@
 import { Link } from 'react-router';
 
 import type { Event } from '@/types/events';
+import { formatDate } from '@/utils/date';
 
 type EventCardProps = {
   event: Event;
 };
-
-const formatDate = (date: string) =>
-  new Date(date).toLocaleDateString('de-DE', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  });
 
 const EventCard = ({ event }: EventCardProps) => {
   return (
